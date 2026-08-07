@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { buildRootHead } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -75,31 +76,42 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Shree Ji Enterprises — Infrastructure Supply & Premium Bathroom Solutions" },
-      { name: "description", content: "Trusted partner for HDPE systems, electrofusion, MDP, borewell products and premium bathware. Project-scale supply across India." },
-      { name: "author", content: "Shree Ji Enterprises" },
-      { property: "og:title", content: "Shree Ji Enterprises" },
-      { property: "og:description", content: "Infrastructure Supply & Premium Bathroom Solutions" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
-    links: [ 
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
-      },
-    ],
-  }),
+  head: () => {
+    const rootHead = buildRootHead();
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: "Shree Ji Enterprises — Infrastructure Supply & Premium Bathroom Solutions" },
+        { name: "description", content: "Trusted partner for HDPE systems, electrofusion, MDP, borewell products and premium bathware. Project-scale supply across India." },
+        { name: "author", content: "Shree Ji Enterprises" },
+        { property: "og:title", content: "Shree Ji Enterprises" },
+        { property: "og:description", content: "Infrastructure Supply & Premium Bathroom Solutions" },
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "ShreeJi Enterprises" },
+        { property: "og:url", content: "https://shreejienterprisessatna.com/" },
+        { property: "og:image", content: "https://shreejienterprisessatna.com/og-default.jpg" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "Shree Ji Enterprises" },
+        { name: "twitter:description", content: "Infrastructure Supply & Premium Bathroom Solutions" },
+        { name: "twitter:image", content: "https://shreejienterprisessatna.com/og-default.jpg" },
+        ...(rootHead.meta ?? []),
+      ],
+      links: [ 
+        {
+          rel: "stylesheet",
+          href: appCss,
+        },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
+        },
+        { rel: "canonical", href: "https://shreejienterprisessatna.com/" },
+      ],
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,

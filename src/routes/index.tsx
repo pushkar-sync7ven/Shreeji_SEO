@@ -16,6 +16,7 @@ import {
   Phone,
 } from "lucide-react";
 import { WhatsappIcon } from "@/components/site/WhatsappIcon";
+import { buildSeoHead } from "@/lib/seo";
 
 import heroInfra from "@/assets/hero-infra.jpg";
 import catHdpe from "@/assets/cat-hdpe.jpg";
@@ -26,18 +27,14 @@ import catBore from "@/assets/cat-borewell.jpg";
 import catGI from "@/assets/GI/gifittings.jpeg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Shree Ji Enterprises — Infrastructure Supply & Premium Bathroom Solutions" },
-      {
-        name: "description",
-        content:
-          "Complete solutions for HDPE Systems, MDP, Borewell Products, Premium Bathware, Faucets & Project Supply across MP.",
-      },
-      { property: "og:title", content: "Shree Ji Enterprises" },
-      { property: "og:description", content: "Infrastructure Supply & Premium Bathroom Solutions" },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "Shree Ji Enterprises — Infrastructure Supply & Premium Bathroom Solutions",
+      description:
+        "Complete solutions for HDPE Systems, MDP, Borewell Products, Premium Bathware, Faucets & Project Supply across MP.",
+      path: "/",
+      image: "/og-default.jpg",
+    }),
   component: Index,
 });
 

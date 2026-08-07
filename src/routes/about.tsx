@@ -13,18 +13,18 @@ import {
 } from "lucide-react";
 
 import { PageHero } from "@/components/site/PageHero";
+import { buildSeoHead } from "@/lib/seo";
 import aboutHero from "@/assets/about-hero.jpg";
 
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — ShreeJi Enterprises" },
-      { name: "description", content: "Your trusted partner for complete plumbing, sanitary and water infrastructure solutions across MP and Central India." },
-      { property: "og:title", content: "About ShreeJi Enterprises" },
-      { property: "og:description", content: "Complete plumbing, sanitary and water infrastructure solutions under one roof." },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "About Us — ShreeJi Enterprises",
+      description: "Your trusted partner for complete plumbing, sanitary and water infrastructure solutions across MP and Central India.",
+      path: "/about",
+      image: "/og-default.jpg",
+    }),
   component: AboutPage,
 });
 
