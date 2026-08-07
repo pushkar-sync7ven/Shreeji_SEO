@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Droplets, ShieldCheck, Award } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
+import { buildSeoHead } from "@/lib/seo";
 import hero from "@/assets/hero-bathroom.jpg";
 import sanitary from "@/assets/bath-sanitaryware.jpg";
 import faucets from "@/assets/bath-faucets.jpg";
@@ -9,15 +10,13 @@ import bathware from "@/assets/bath-bathware.jpg";
 import shower from "@/assets/bath-shower.jpg";
 
 export const Route = createFileRoute("/bathroom-solutions")({
-  head: () => ({
-    meta: [
-      { title: "Exclusive Bathware — Jaquel & Dutron | ShreeJi Enterprises" },
-      { name: "description", content: "Exclusive bathware from Jaquel and Dutron — luxury sanitaryware, designer faucets and premium plumbing systems curated for discerning homes." },
-      { property: "og:title", content: "Exclusive Bathware — Jaquel & Dutron" },
-      { property: "og:description", content: "Two icons of Indian bathware. One trusted supplier." },
-      { property: "og:image", content: hero },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "Exclusive Bathware — Jaquel & Dutron | ShreeJi Enterprises",
+      description: "Exclusive bathware from Jaquel and Dutron — luxury sanitaryware, designer faucets and premium plumbing systems curated for discerning homes.",
+      path: "/bathroom-solutions",
+      image: "/og-default.jpg",
+    }),
   component: BathroomSolutions,
 });
 

@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
+import { buildSeoHead } from "@/lib/seo";
 import heroImg from "@/assets/hero-infra.jpg";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — Shreeji Enterprises" },
-      { name: "description", content: "How Shreeji Enterprises collects, uses and protects your personal information." },
-      { property: "og:title", content: "Privacy Policy — Shreeji Enterprises" },
-      { property: "og:description", content: "Privacy policy for Shreeji Enterprises." },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "Privacy Policy — Shreeji Enterprises",
+      description: "How Shreeji Enterprises collects, uses and protects your personal information.",
+      path: "/privacy",
+      image: "/og-default.jpg",
+    }),
   component: PrivacyPage,
 });
 

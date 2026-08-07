@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { WhatsappIcon } from "@/components/site/WhatsappIcon";
+import { buildSeoHead } from "@/lib/seo";
 import contactHero from "@/assets/contact-hero-new.jpg.asset.json";
 import emailjs from "@emailjs/browser";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Shree Ji Enterprises" },
-      { name: "description", content: "Reach Shree Ji Enterprises for project enquiries, technical consultation and quotations." },
-      { property: "og:title", content: "Contact Shree Ji Enterprises" },
-      { property: "og:description", content: "Get in touch with our team." },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "Contact — Shree Ji Enterprises",
+      description: "Reach Shree Ji Enterprises for project enquiries, technical consultation and quotations.",
+      path: "/contact",
+      image: "/og-default.jpg",
+    }),
   component: ContactPage,
 });
 

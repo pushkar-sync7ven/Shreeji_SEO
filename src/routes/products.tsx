@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, ArrowRight, ChevronRight, Info } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
+import { buildSeoHead } from "@/lib/seo";
 import heroImg from "@/assets/hero-infra.jpg";
 import catHdpe from "@/assets/cat-hdpe.jpg";
 import catElectro from "@/assets/cat-electrofusion.jpg";
@@ -50,14 +51,13 @@ export const Route = createFileRoute("/products")({
   validateSearch: (search: Record<string, unknown>) => ({
     category: typeof search.category === "string" ? search.category : undefined,
   }),
-  head: () => ({
-    meta: [
-      { title: "Product Catalogue — Shree Ji Enterprises" },
-      { name: "description", content: "Explore HDPE Systems, Electrofusion, MDP, Bathroom Products, Faucets and Borewell products." },
-      { property: "og:title", content: "Product Catalogue — Shree Ji Enterprises" },
-      { property: "og:description", content: "Infrastructure & bathware product catalogue." },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "Product Catalogue — Shree Ji Enterprises",
+      description: "Explore HDPE Systems, Electrofusion, MDP, Bathroom Products, Faucets and Borewell products.",
+      path: "/products",
+      image: "/og-default.jpg",
+    }),
   component: ProductsPage,
 });
 

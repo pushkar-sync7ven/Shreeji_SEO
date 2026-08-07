@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
+import { buildSeoHead } from "@/lib/seo";
 import heroImg from "@/assets/hero-infra.jpg";
 
 export const Route = createFileRoute("/terms")({
-  head: () => ({
-    meta: [
-      { title: "Terms & Conditions — Shreeji Enterprises" },
-      { name: "description", content: "Terms and conditions governing the use of Shreeji Enterprises services and products." },
-      { property: "og:title", content: "Terms & Conditions — Shreeji Enterprises" },
-      { property: "og:description", content: "Terms and conditions for Shreeji Enterprises." },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "Terms & Conditions — Shreeji Enterprises",
+      description: "Terms and conditions governing the use of Shreeji Enterprises services and products.",
+      path: "/terms",
+      image: "/og-default.jpg",
+    }),
   component: TermsPage,
 });
 
