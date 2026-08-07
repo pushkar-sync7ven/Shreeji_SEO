@@ -20,8 +20,8 @@ import aboutHero from "@/assets/about-hero.jpg";
 export const Route = createFileRoute("/about")({
   head: () =>
     buildSeoHead({
-      title: "About Us — ShreeJi Enterprises",
-      description: "Your trusted partner for complete plumbing, sanitary and water infrastructure solutions across MP and Central India.",
+      title: "About Us — Plumbing Supplier in Satna | ShreeJi Enterprises",
+      description: "Learn about ShreeJi Enterprises, a trusted plumbing and bathware supplier in Satna serving Madhya Pradesh with quality infrastructure products.",
       path: "/about",
       image: "/og-default.jpg",
     }),

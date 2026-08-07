@@ -11,8 +11,8 @@ import emailjs from "@emailjs/browser";
 export const Route = createFileRoute("/contact")({
   head: () =>
     buildSeoHead({
-      title: "Contact — Shree Ji Enterprises",
-      description: "Reach Shree Ji Enterprises for project enquiries, technical consultation and quotations.",
+      title: "Contact Us — Satna, Madhya Pradesh | ShreeJi Enterprises",
+      description: "Get in touch with ShreeJi Enterprises in Satna for plumbing, bathware and infrastructure product enquiries across Madhya Pradesh.",
       path: "/contact",
       image: "/og-default.jpg",
     }),

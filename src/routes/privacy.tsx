@@ -6,8 +6,8 @@ import heroImg from "@/assets/hero-infra.jpg";
 export const Route = createFileRoute("/privacy")({
   head: () =>
     buildSeoHead({
-      title: "Privacy Policy — Shreeji Enterprises",
-      description: "How Shreeji Enterprises collects, uses and protects your personal information.",
+      title: "Privacy Policy | ShreeJi Enterprises",
+      description: "Read the privacy policy of ShreeJi Enterprises, Satna — how we handle your personal information when you enquire about our products.",
       path: "/privacy",
       image: "/og-default.jpg",
     }),

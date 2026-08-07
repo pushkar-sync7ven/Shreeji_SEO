@@ -53,8 +53,8 @@ export const Route = createFileRoute("/products")({
   }),
   head: () =>
     buildSeoHead({
-      title: "Product Catalogue — Shree Ji Enterprises",
-      description: "Explore HDPE Systems, Electrofusion, MDP, Bathroom Products, Faucets and Borewell products.",
+      title: "Plumbing & Bathroom Product Catalogue | ShreeJi Enterprises",
+      description: "Explore HDPE, MDP, GI, borewell, faucets and bathroom products in Satna, Madhya Pradesh. Quality plumbing supplies for every project.",
       path: "/products",
       image: "/og-default.jpg",
     }),

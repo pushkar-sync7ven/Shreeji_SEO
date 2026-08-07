@@ -12,8 +12,8 @@ import shower from "@/assets/bath-shower.jpg";
 export const Route = createFileRoute("/bathroom-solutions")({
   head: () =>
     buildSeoHead({
-      title: "Exclusive Bathware — Jaquel & Dutron | ShreeJi Enterprises",
-      description: "Exclusive bathware from Jaquel and Dutron — luxury sanitaryware, designer faucets and premium plumbing systems curated for discerning homes.",
+      title: "Premium Bathroom Solutions in Satna | ShreeJi Enterprises",
+      description: "Luxury sanitaryware, designer faucets and premium bathware in Satna, Madhya Pradesh. Curated brands for builders and homeowners.",
       path: "/bathroom-solutions",
       image: "/og-default.jpg",
     }),

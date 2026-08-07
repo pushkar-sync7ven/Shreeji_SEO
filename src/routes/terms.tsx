@@ -6,8 +6,8 @@ import heroImg from "@/assets/hero-infra.jpg";
 export const Route = createFileRoute("/terms")({
   head: () =>
     buildSeoHead({
-      title: "Terms & Conditions — Shreeji Enterprises",
-      description: "Terms and conditions governing the use of Shreeji Enterprises services and products.",
+      title: "Terms & Conditions | ShreeJi Enterprises",
+      description: "Terms governing the use of ShreeJi Enterprises' website and services for plumbing and bathroom product supply in Satna, Madhya Pradesh.",
       path: "/terms",
       image: "/og-default.jpg",
     }),

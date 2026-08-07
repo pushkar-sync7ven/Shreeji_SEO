@@ -29,9 +29,9 @@ import catGI from "@/assets/GI/gifittings.jpeg";
 export const Route = createFileRoute("/")({
   head: () =>
     buildSeoHead({
-      title: "Shree Ji Enterprises — Infrastructure Supply & Premium Bathroom Solutions",
+      title: "HDPE, MDP & Bathroom Solutions in Satna | ShreeJi Enterprises",
       description:
-        "Complete solutions for HDPE Systems, MDP, Borewell Products, Premium Bathware, Faucets & Project Supply across MP.",
+        "Trusted supplier of HDPE, MDP, borewell and premium bathroom products in Satna, Madhya Pradesh. Call for project quotes and bulk supply.",
       path: "/",
       image: "/og-default.jpg",
     }),
