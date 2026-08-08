@@ -14,10 +14,10 @@ import catBore from "@/assets/cat-borewell.jpg";
 
 // HDPE Images
 import hdpepipes from "@/assets/HDPE/HDPE_Pipe.jpg";
-import hdpeElectrofusion from "@/assets/HDPE/Electrofusion.png";
-import hdpeButtFusion from "@/assets/HDPE/HDPE_Butt_Fusion.png";
-import hdpeFitting from "@/assets/HDPE/HDPE_Fitting.png";
-import hdpeSpigotButtFusion from "@/assets/HDPE/Spigot_Butt_Fusion.png";
+import hdpeElectrofusion from "@/assets/HDPE/Electrofusion.jpeg";
+import hdpeButtFusion from "@/assets/HDPE/HDPE_Butt_Fusion.jpeg";
+import hdpeFitting from "@/assets/HDPE/HDPE_Fitting.jpeg";
+import hdpeSpigotButtFusion from "@/assets/HDPE/Spigot_Butt_Fusion.jpeg";
 
 // MDP Images
 import mdpFitting from "@/assets/MDP/MDP_Fitting.png";
@@ -46,6 +46,9 @@ import handPumpPipes from "@/assets/BorewellProducts/handpumpPipes.jpeg";
 //GI Products
 import GIFitting from "@/assets/GI/gifittings.jpeg";
 import GIPipes from "@/assets/GI/gipipes.jpeg";
+
+//Residential
+import catDutron from "@/assets/Residential/dutron_pipes_fittings.png"
 
 export const Route = createFileRoute("/products")({
   validateSearch: (search: Record<string, unknown>) => ({
@@ -168,7 +171,7 @@ const catalog: Record<string, Category> = {
   residential: {
     title: "Residential Products",
     desc: "Curated plumbing systems designed for modern homes — durable, hygienic and easy to install.",
-    img: catMdp,
+    img: catDutron,
     items: [
       { name: "Dutron Pipes and Fittings", tag: "Residential Plumbing", brochure: "/brochures/dutron.pdf" },
     ],

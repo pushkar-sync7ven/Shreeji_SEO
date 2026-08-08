@@ -102,7 +102,7 @@ function AboutPage() {
               We believe our responsibility extends far beyond supplying materials. Our real value lies in helping customers choose the right solutions, simplify procurement, reduce uncertainty and ensure dependable supply throughout every stage of their project.
             </p>
             <p>
-              Today, ShreeJi Enterprises proudly supports private contractors, infrastructure developers, government project contractors, architects, engineers, interior designers and property owners across <span className="font-semibold text-ink">MP and surrounding regions</span> by providing trusted products, technical guidance and dependable project support.
+              Today, ShreeJi Enterprises proudly supports private contractors, infrastructure developers, government project contractors, architects, engineers, interior designers and property owners across <span className="font-semibold text-ink">Madhya Pradesh and surrounding regions</span> by providing trusted products, technical guidance and dependable project support.
             </p>
             <div className="pt-4">
               <Link

@@ -37,7 +37,7 @@ export function Footer() {
         <div className="space-y-5">
           <Logo variant="light" />
           <p className="max-w-xs text-sm leading-relaxed text-white/60">
-            Infrastructure Supply & Premium Bathroom Solutions for projects in MP.
+            Infrastructure Supply & Premium Bathroom Solutions for projects in Madhya Pradesh.
           </p>
           <div className="flex gap-3">
             {socials.map(({ Icon, label, href }) => (
@@ -125,7 +125,7 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-saffron" />
-              Shreeji Enterprise, Bus Stand, Navrang Park Colony, MP — 485001
+              Shreeji Enterprise, Bus Stand, Navrang Park Colony, Madhya Pradesh — 485001
             </li>
           </ul>
         </div>

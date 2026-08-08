@@ -28,7 +28,7 @@ function TermsPage() {
             </Section>
 
             <Section title="2. About Us">
-              Shreeji Enterprises is an infrastructure supply and premium bathroom solutions company based in MP, India. We supply HDPE systems, MDP systems, borewell products, faucets, sanitaryware and related plumbing materials to contractors, developers, architects and residential customers.
+              Shreeji Enterprises is an infrastructure supply and premium bathroom solutions company based in Madhya Pradesh, India. We supply HDPE systems, MDP systems, borewell products, faucets, sanitaryware and related plumbing materials to contractors, developers, architects and residential customers.
             </Section>
 
             <Section title="3. Products & Availability">
@@ -60,7 +60,7 @@ function TermsPage() {
             </Section>
 
             <Section title="10. Governing Law & Jurisdiction">
-              These Terms are governed by the laws of India. Any disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts at MP.
+              These Terms are governed by the laws of India. Any disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts at Madhya Pradesh.
             </Section>
 
             <Section title="11. Changes to These Terms">
