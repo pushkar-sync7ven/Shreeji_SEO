@@ -236,7 +236,7 @@ function Hero() {
           className="mt-20 grid max-w-3xl grid-cols-1 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3"
         >
           {[
-            { icon: MapPin, t: "Serving Projects", s: "MP" },
+            { icon: MapPin, t: "Serving Projects", s: "Madhya Pradesh" },
             { icon: ShieldCheck, t: "Quality Products", s: "From trusted brands" },
             { icon: Wrench, t: "Technical Support", s: "& after-sales assistance" },
           ].map(({ icon: Icon, t, s }) => (
@@ -399,22 +399,19 @@ function Brands() {
       <div className="relative mt-14 overflow-hidden">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-background to-transparent" />
-        <div className="flex w-max marquee-track items-center gap-10 px-6">
-          {loop.map((b, i) => (
-            <div
-              key={`${b.name}-${i}`}
-              className="flex h-20 w-40 shrink-0 items-center justify-center rounded-xl bg-white px-5 shadow-[0_4px_18px_-8px_rgba(42,42,42,0.15)] ring-1 ring-border/50 transition hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-10px_rgba(42,42,42,0.25)]"
-              title={b.name}
-            >
-              <img
-                src={logoUrl(b.domain)}
-                alt={`${b.name} logo`}
-                loading="lazy"
-                className="max-h-12 max-w-full object-contain"
-              />
-            </div>
-          ))}
-        </div>
+       <div className="flex w-max marquee-track items-center gap-10 px-6">
+        {loop.map((b, i) => (
+          <div
+            key={`${b.name}-${i}`}
+            className="flex h-20 w-40 shrink-0 items-center justify-center rounded-xl bg-white px-5 shadow-[0_4px_18px_-8px_rgba(42,42,42,0.15)] ring-1 ring-border/50 transition hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-10px_rgba(42,42,42,0.25)]"
+            title={b.name}
+          >
+            <span className="text-center text-base font-bold text-gray-800">
+              {b.name}
+            </span>
+          </div>
+        ))}
+      </div>
       </div>
       <div className="mt-16 flex flex-wrap justify-center gap-3">
         {[Users, Briefcase].map((Icon, i) => (
