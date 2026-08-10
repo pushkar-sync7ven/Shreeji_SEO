@@ -18,6 +18,8 @@ export function PageHero({
       <motion.img
         src={image}
         alt=""
+        fetchPriority="high"
+        decoding="async"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.6, ease: "easeOut" }}

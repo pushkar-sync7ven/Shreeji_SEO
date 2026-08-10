@@ -171,6 +171,8 @@ function Hero() {
       <motion.img
         src={heroInfra}
         alt="Infrastructure supply at project site"
+        fetchPriority="high"
+        decoding="async"
         initial={{ scale: 1.15 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2.2, ease: "easeOut" }}
