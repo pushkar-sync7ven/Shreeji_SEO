@@ -125,7 +125,7 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-saffron" />
-              Shreeji Enterprise, Bus Stand, Navrang Park Colony, Madhya Pradesh — 485001
+              Shreeji Enterprise, Bus Stand, Navrang Park Colony, Madhya Pradesh — 485005
             </li>
           </ul>
         </div>

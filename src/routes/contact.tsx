@@ -55,7 +55,7 @@ const cards = [
     lines: [
       "Shreeji Enterprise, Bus Stand,",
       "Navrang Park Colony, Jeevan Jyoti Colony,",
-      "Madhya Pradesh — 485001",
+      "Madhya Pradesh — 485005",
     ],
     href: "https://maps.app.goo.gl/apsa7YBL88hRrQ3e6",
     external: true,
