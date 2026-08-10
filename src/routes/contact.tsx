@@ -15,7 +15,7 @@ export const Route = createFileRoute("/contact")({
       description:
         "Get in touch with ShreeJi Enterprises in Satna for plumbing, bathware and infrastructure product enquiries across Madhya Pradesh.",
       path: "/contact",
-      image: "/og-default.jpg",
+      image: "/Contact_img.jpeg",
     }),
   component: ContactPage,
 });
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/contact")({
 const WHATSAPP_URL =
   "https://wa.me/918882597076?text=" +
   encodeURIComponent(
-    "Hi! I have a query regarding your services. Looking forward to your response."
+    "Hi! I have a query regarding your services. Looking forward to your response.",
   );
 
 const cards = [
@@ -96,8 +96,7 @@ function validate(v: FormState): FormErrors {
   if (!v.email.trim()) errors.email = "Please enter your email";
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email.trim()))
     errors.email = "Enter a valid email address";
-  else if (v.email.trim().length > 120)
-    errors.email = "Email is too long";
+  else if (v.email.trim().length > 120) errors.email = "Email is too long";
 
   if (!v.requirement) errors.requirement = "Select a requirement";
 
@@ -124,10 +123,7 @@ function ContactPage() {
 
   const [errors, setErrors] = useState<FormErrors>({});
 
-  const setField = <K extends keyof FormState>(
-    k: K,
-    v: FormState[K]
-  ) => {
+  const setField = <K extends keyof FormState>(k: K, v: FormState[K]) => {
     setValues((s) => ({ ...s, [k]: v }));
 
     if (errors[k]) {
@@ -157,7 +153,7 @@ function ContactPage() {
           requirement: values.requirement,
           message: values.message,
         },
-        "Vvy7kdYcaegmxqeZM"
+        "Vvy7kdYcaegmxqeZM",
       );
 
       // Auto Reply to Customer
@@ -169,7 +165,7 @@ function ContactPage() {
           email: values.email,
           requirement: values.requirement,
         },
-        "Vvy7kdYcaegmxqeZM"
+        "Vvy7kdYcaegmxqeZM",
       );
 
       setSent(true);
@@ -209,68 +205,63 @@ function ContactPage() {
 
       <section className="w-full overflow-x-hidden bg-background py-16 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
-
           {/* MAIN CONTACT GRID */}
           <div className="grid w-full grid-cols-1 gap-6 md:gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-10">
-
             {/* LEFT SIDE */}
             <div className="min-w-0 w-full space-y-5">
-
               {/* CONTACT CARDS */}
-              {cards.map(
-                ({ icon: Icon, label, lines, href, external }, i) => {
-                  const Inner = (
-                    <motion.div
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.5,
-                        delay: i * 0.08,
-                      }}
-                      className="group flex w-full min-w-0 items-start gap-4 overflow-hidden rounded-2xl border border-border/60 bg-card p-4 transition hover:-translate-y-0.5 hover:border-saffron/40 hover:shadow-[0_18px_40px_-22px_rgba(42,42,42,0.25)] sm:gap-5 sm:p-6"
-                    >
-                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-saffron/10 text-saffron transition group-hover:bg-saffron group-hover:text-white sm:h-12 sm:w-12">
-                        <Icon className="h-5 w-5" />
-                      </span>
+              {cards.map(({ icon: Icon, label, lines, href, external }, i) => {
+                const Inner = (
+                  <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      delay: i * 0.08,
+                    }}
+                    className="group flex w-full min-w-0 items-start gap-4 overflow-hidden rounded-2xl border border-border/60 bg-card p-4 transition hover:-translate-y-0.5 hover:border-saffron/40 hover:shadow-[0_18px_40px_-22px_rgba(42,42,42,0.25)] sm:gap-5 sm:p-6"
+                  >
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-saffron/10 text-saffron transition group-hover:bg-saffron group-hover:text-white sm:h-12 sm:w-12">
+                      <Icon className="h-5 w-5" />
+                    </span>
 
-                      <div className="min-w-0 flex-1">
-                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-ink-soft">
-                          {label}
-                        </p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-ink-soft">
+                        {label}
+                      </p>
 
-                        <div className="mt-1 space-y-0.5 break-words text-sm font-medium text-ink sm:text-base">
-                          {lines.map((l) => (
-                            <p key={l} className="break-words">
-                              {l}
-                            </p>
-                          ))}
-                        </div>
+                      <div className="mt-1 space-y-0.5 break-words text-sm font-medium text-ink sm:text-base">
+                        {lines.map((l) => (
+                          <p key={l} className="break-words">
+                            {l}
+                          </p>
+                        ))}
                       </div>
-                    </motion.div>
-                  );
-
-                  return href ? (
-                    <a
-                      key={label}
-                      href={href}
-                      className="block w-full min-w-0"
-                      {...(external
-                        ? {
-                            target: "_blank",
-                            rel: "noopener noreferrer",
-                          }
-                        : {})}
-                    >
-                      {Inner}
-                    </a>
-                  ) : (
-                    <div key={label} className="w-full min-w-0">
-                      {Inner}
                     </div>
-                  );
-                }
-              )}
+                  </motion.div>
+                );
+
+                return href ? (
+                  <a
+                    key={label}
+                    href={href}
+                    className="block w-full min-w-0"
+                    {...(external
+                      ? {
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                        }
+                      : {})}
+                  >
+                    {Inner}
+                  </a>
+                ) : (
+                  <div key={label} className="w-full min-w-0">
+                    {Inner}
+                  </div>
+                );
+              })}
 
               {/* MAP CARD */}
               <div className="w-full min-w-0 overflow-hidden rounded-2xl border border-border/60 bg-card">
@@ -307,7 +298,6 @@ function ContactPage() {
               </p>
 
               <div className="mt-7 grid gap-5 sm:mt-8">
-
                 {/* NAME */}
                 <Field
                   label="Your Name"
@@ -352,14 +342,10 @@ function ContactPage() {
 
                   <select
                     value={values.requirement}
-                    onChange={(e) =>
-                      setField("requirement", e.target.value)
-                    }
+                    onChange={(e) => setField("requirement", e.target.value)}
                     required
                     className={`mt-2 h-12 w-full min-w-0 rounded-lg border bg-background px-4 text-sm text-ink outline-none transition focus:border-saffron ${
-                      errors.requirement
-                        ? "border-red-500"
-                        : "border-border"
+                      errors.requirement ? "border-red-500" : "border-border"
                     }`}
                   >
                     <option value="">Select a requirement</option>
@@ -385,16 +371,12 @@ function ContactPage() {
                   <textarea
                     rows={4}
                     value={values.message}
-                    onChange={(e) =>
-                      setField("message", e.target.value)
-                    }
+                    onChange={(e) => setField("message", e.target.value)}
                     required
                     minLength={10}
                     maxLength={1000}
                     className={`mt-2 w-full resize-none rounded-lg border bg-background px-4 py-3 text-sm text-ink outline-none transition focus:border-saffron ${
-                      errors.message
-                        ? "border-red-500"
-                        : "border-border"
+                      errors.message ? "border-red-500" : "border-border"
                     }`}
                   />
 
@@ -482,11 +464,7 @@ function Field({
         }`}
       />
 
-      {error && (
-        <p className="mt-1.5 text-xs text-red-500">
-          {error}
-        </p>
-      )}
+      {error && <p className="mt-1.5 text-xs text-red-500">{error}</p>}
     </div>
   );
 }

@@ -48,7 +48,7 @@ import GIFitting from "@/assets/GI/gifittings.jpeg";
 import GIPipes from "@/assets/GI/gipipes.jpeg";
 
 //Residential
-import catDutron from "@/assets/Residential/dutron_pipes_fittings.png"
+import catDutron from "@/assets/Residential/dutron_pipes_fittings.png";
 
 export const Route = createFileRoute("/products")({
   validateSearch: (search: Record<string, unknown>) => ({
@@ -57,7 +57,8 @@ export const Route = createFileRoute("/products")({
   head: () =>
     buildSeoHead({
       title: "Plumbing & Bathroom Product Catalogue | ShreeJi Enterprises",
-      description: "Explore HDPE, MDP, GI, borewell, faucets and bathroom products in Satna, Madhya Pradesh. Quality plumbing supplies for every project.",
+      description:
+        "Explore HDPE, MDP, GI, borewell, faucets and bathroom products in Satna, Madhya Pradesh. Quality plumbing supplies for every project.",
       path: "/products",
       image: "/og-default.jpg",
     }),
@@ -87,7 +88,12 @@ const catalog: Record<string, Category> = {
     img: catHdpe,
     items: [
       { name: "HDPE Pipes", tag: "PE 80 / PE 100", img: hdpepipes },
-      { name: "HDPE Fittings", tag: "Explore range", subKey: "fittings", img: hdpeFitting },
+      {
+        name: "HDPE Fittings",
+        tag: "Explore range",
+        subKey: "fittings",
+        img: hdpeFitting,
+      },
     ],
     subGroups: {
       fittings: {
@@ -121,7 +127,12 @@ const catalog: Record<string, Category> = {
     img: catMdp,
     items: [
       { name: "MDP Pipe", tag: "PEX-AL-PEX", img: mdpPipes },
-      { name: "MDP Fitting", tag: "Press-fit", brochure: "/brochures/mdpfittings.pdf", img: mdpFitting },
+      {
+        name: "MDP Fitting",
+        tag: "Press-fit",
+        brochure: "/brochures/mdpfittings.pdf",
+        img: mdpFitting,
+      },
     ],
   },
   bathroom: {
@@ -141,10 +152,30 @@ const catalog: Record<string, Category> = {
     desc: "Designer faucets in chrome, brushed brass and matte black from India's most trusted brands.",
     img: catFaucet,
     items: [
-      { name: "Faucets", tag: "Chrome / Brass", brochure: "/brochures/faucets.pdf", img: faucets },
-      { name: "Showers", tag: "Rain + Hand", brochure: "/brochures/showers.pdf", img: shower },
-      { name: "Diverters and Mixers", tag: "Concealed", brochure: "/brochures/diverters.pdf", img: diverter },
-      { name: "Bathroom Accessories", tag: "Complete Range", brochure: "/brochures/bathroom-accessories.pdf", img: accessories },
+      {
+        name: "Faucets",
+        tag: "Chrome / Brass",
+        brochure: "/brochures/faucets.pdf",
+        img: faucets,
+      },
+      {
+        name: "Showers",
+        tag: "Rain + Hand",
+        brochure: "/brochures/showers.pdf",
+        img: shower,
+      },
+      {
+        name: "Diverters and Mixers",
+        tag: "Concealed",
+        brochure: "/brochures/diverters.pdf",
+        img: diverter,
+      },
+      {
+        name: "Bathroom Accessories",
+        tag: "Complete Range",
+        brochure: "/brochures/bathroom-accessories.pdf",
+        img: accessories,
+      },
     ],
   },
   borewell: {
@@ -156,7 +187,7 @@ const catalog: Record<string, Category> = {
       { name: "Column Pipes", tag: "uPVC / HDPE", img: columnPipe },
       { name: "Cable & Accessories", tag: "Submersible", img: borewellCables },
       { name: "Handpump", tag: "Manual", img: handPump },
-      { name: "Handpump Pipes", tag: "GI / uPVC", img: handPumpPipes},
+      { name: "Handpump Pipes", tag: "GI / uPVC", img: handPumpPipes },
     ],
   },
   gi: {
@@ -164,7 +195,7 @@ const catalog: Record<string, Category> = {
     desc: "Galvanised iron pipes and fittings engineered for water supply, structural and industrial applications.",
     img: catHdpe,
     items: [
-      { name: "GI Pipes", tag: "Heavy / Medium" , img: GIPipes},
+      { name: "GI Pipes", tag: "Heavy / Medium", img: GIPipes },
       { name: "GI Fittings", tag: "Threaded", img: GIFitting },
     ],
   },
@@ -173,7 +204,11 @@ const catalog: Record<string, Category> = {
     desc: "Curated plumbing systems designed for modern homes — durable, hygienic and easy to install.",
     img: catDutron,
     items: [
-      { name: "Dutron Pipes and Fittings", tag: "Residential Plumbing", brochure: "/brochures/dutron.pdf" },
+      {
+        name: "Dutron Pipes and Fittings",
+        tag: "Residential Plumbing",
+        brochure: "/brochures/dutron.pdf",
+      },
     ],
   },
 };
@@ -183,7 +218,9 @@ void catElectro;
 
 function ProductsPage() {
   const { category } = Route.useSearch();
-  const initial = (category && category in catalog ? category : "hdpe") as keyof typeof catalog;
+  const initial = (
+    category && category in catalog ? category : "hdpe"
+  ) as keyof typeof catalog;
   const [active, setActive] = useState<keyof typeof catalog>(initial);
   const [subKey, setSubKey] = useState<string | null>(null);
 
@@ -203,12 +240,18 @@ function ProductsPage() {
 
   return (
     <>
-      <PageHero eyebrow="Product Catalogue" title="Our Product Catalogue" image={heroImg} crumb="Products" />
+      <PageHero
+        eyebrow="Product Catalogue"
+        title="Our Product Catalogue"
+        image={heroImg}
+        crumb="Products"
+      />
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <p className="mb-12 max-w-2xl text-base text-ink-soft">
-            Explore our wide range of infrastructure and plumbing products — engineered for
-            long-term performance on residential, commercial and large-scale projects.
+            Explore our wide range of infrastructure and plumbing products —
+            engineered for long-term performance on residential, commercial and
+            large-scale projects.
           </p>
 
           <div className="grid gap-10 lg:grid-cols-[260px_1fr]">
@@ -254,19 +297,26 @@ function ProductsPage() {
                       >
                         ← Back to {cat.title}
                       </button>
-                      <h2 className="font-display text-4xl text-ink md:text-5xl">{sub.title}</h2>
+                      <h2 className="font-display text-4xl text-ink md:text-5xl">
+                        {sub.title}
+                      </h2>
                     </>
                   ) : (
                     <>
-                      <h2 className="font-display text-4xl text-ink md:text-5xl">{cat.title}</h2>
-                      <p className="mt-4 max-w-2xl text-base text-ink-soft">{cat.desc}</p>
+                      <h2 className="font-display text-4xl text-ink md:text-5xl">
+                        {cat.title}
+                      </h2>
+                      <p className="mt-4 max-w-2xl text-base text-ink-soft">
+                        {cat.desc}
+                      </p>
                     </>
                   )}
 
                   <div className="mt-6 flex items-start gap-2 rounded-lg border border-saffron/30 bg-saffron/5 p-3 text-xs text-ink-soft">
                     <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-saffron" />
                     <span>
-                      All products represented in catalogues are subject to Availability and Demand.
+                      All products represented in catalogues are subject to
+                      Availability and Demand.
                     </span>
                   </div>
 
@@ -296,11 +346,14 @@ function ProductsPage() {
                           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-saffron">
                             {item.tag}
                           </p>
-                          <h3 className="mt-1.5 font-display text-xl text-ink">{item.name}</h3>
+                          <h3 className="mt-1.5 font-display text-xl text-ink">
+                            {item.name}
+                          </h3>
                           <div className="mt-4 flex items-center justify-between border-t border-border/60 pt-3 text-xs">
                             {item.subKey ? (
                               <span className="inline-flex items-center gap-1 font-semibold text-saffron">
-                                Explore Range <ChevronRight className="h-3 w-3" />
+                                Explore Range{" "}
+                                <ChevronRight className="h-3 w-3" />
                               </span>
                             ) : (
                               <>
@@ -340,7 +393,8 @@ function ProductsPage() {
 
                   <div className="mt-12 flex justify-center">
                     <button className="inline-flex items-center gap-2 rounded-full bg-saffron px-8 py-4 text-sm font-semibold text-white transition hover:bg-saffron-deep">
-                      <Download className="h-4 w-4" /> Download Full Catalogue (PDF)
+                      <Download className="h-4 w-4" /> Download Full Catalogue
+                      (PDF)
                     </button>
                   </div>
                 </motion.div>
