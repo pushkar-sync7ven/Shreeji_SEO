@@ -5,6 +5,7 @@ import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { WhatsappIcon } from "@/components/site/WhatsappIcon";
 import { buildSeoHead } from "@/lib/seo";
+import { pageSchema, breadcrumbSchema, jsonLdString } from "@/lib/structured-data";
 import contactHero from "@/assets/contact-hero-new.jpg.asset.json";
 import emailjs from "@emailjs/browser";
 
@@ -194,8 +195,26 @@ function ContactPage() {
     }
   };
 
+  const jsonLd = jsonLdString([
+    pageSchema({
+      path: "/contact",
+      name: "Contact Us — Satna, Madhya Pradesh",
+      type: "ContactPage",
+      description:
+        "Get in touch with ShreeJi Enterprises in Satna for plumbing, bathware and infrastructure product enquiries across Madhya Pradesh.",
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Contact Us", path: "/contact" },
+    ]),
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd }}
+      />
       <PageHero
         eyebrow="Contact Us"
         title="Get In Touch"

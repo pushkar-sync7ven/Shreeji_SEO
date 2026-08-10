@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { buildSeoHead } from "@/lib/seo";
+import { pageSchema, breadcrumbSchema, jsonLdString } from "@/lib/structured-data";
 import heroImg from "@/assets/hero-infra.jpg";
 
 export const Route = createFileRoute("/terms")({
@@ -15,8 +16,23 @@ export const Route = createFileRoute("/terms")({
 });
 
 function TermsPage() {
+  const jsonLd = jsonLdString([
+    pageSchema({
+      path: "/terms",
+      name: "Terms & Conditions — ShreeJi Enterprises",
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Terms & Conditions", path: "/terms" },
+    ]),
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd }}
+      />
       <PageHero eyebrow="Legal" title="Terms & Conditions" image={heroImg} crumb="Terms & Conditions" />
       <section className="bg-background py-20">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">

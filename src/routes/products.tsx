@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Download, ArrowRight, ChevronRight, Info } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { buildSeoHead } from "@/lib/seo";
+import { pageSchema, breadcrumbSchema, jsonLdString } from "@/lib/structured-data";
 import heroImg from "@/assets/hero-infra.jpg";
 import catHdpe from "@/assets/cat-hdpe.jpg";
 import catElectro from "@/assets/cat-electrofusion.jpg";
@@ -238,8 +239,26 @@ function ProductsPage() {
   const sub = subKey && cat.subGroups ? cat.subGroups[subKey] : null;
   const displayItems = sub ? sub.items : cat.items;
 
+  const jsonLd = jsonLdString([
+    pageSchema({
+      path: "/products",
+      name: "Our Product Catalogue",
+      type: "CollectionPage",
+      description:
+        "Explore HDPE, MDP, GI, borewell, faucets and bathroom products in Satna, Madhya Pradesh.",
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Products", path: "/products" },
+    ]),
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd }}
+      />
       <PageHero
         eyebrow="Product Catalogue"
         title="Our Product Catalogue"
