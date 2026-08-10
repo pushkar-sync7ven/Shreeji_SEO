@@ -26,11 +26,11 @@ import {
 } from "@/lib/structured-data";
 
 import heroInfra from "@/assets/hero-infra.jpg";
-import catHdpe from "@/assets/cat-hdpe.jpg";
+import catHdpe from "@/assets/HDPE/HDPE_Pipe.jpg";
 import catMdp from "@/assets/MDP/MDP_Fitting.png";
-import catBath from "@/assets/cat-bathroom.jpg";
-import catFaucet from "@/assets/cat-faucets.jpg";
-import catBore from "@/assets/cat-borewell.jpg";
+import catBath from "@/assets/BathroomProduct/cat-bathroom.jpg";
+import catFaucet from "@/assets/Faucets&Fittings/Faucets.jpg";
+import catBore from "@/assets/BorewellProducts/cat-borewell.jpg";
 import catGI from "@/assets/GI/gifittings.jpeg";
 
 export const Route = createFileRoute("/")({

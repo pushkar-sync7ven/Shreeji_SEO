@@ -6,7 +6,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { WhatsappIcon } from "@/components/site/WhatsappIcon";
 import { buildSeoHead } from "@/lib/seo";
 import { pageSchema, breadcrumbSchema, jsonLdString } from "@/lib/structured-data";
-import contactHero from "@/assets/contact-hero-new.jpg.asset.json";
+import contactHero from "@/assets/Contact_img.jpeg";
 import emailjs from "@emailjs/browser";
 
 export const Route = createFileRoute("/contact")({
@@ -218,7 +218,7 @@ function ContactPage() {
       <PageHero
         eyebrow="Contact Us"
         title="Get In Touch"
-        image={contactHero.url}
+        image={contactHero}
         crumb="Contact Us"
       />
 
