@@ -81,7 +81,7 @@ function PrivacyPage() {
 
             <Section title="11. Contact Us">
               For any privacy-related questions or requests, please contact us at{" "}
-              <a className="text-saffron" href="mailto:Shrijienterprises9755@gmail.com">Shrijienterprises9755@gmail.com</a>{" "}
+              <a className="text-saffron" href="mailto:Shrijienterprises9755@gmail.com">shreejienterprises1806@gmail.com</a>{" "}
               or call +91 88825 97076.
             </Section>
           </div>

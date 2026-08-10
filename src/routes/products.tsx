@@ -6,12 +6,12 @@ import { PageHero } from "@/components/site/PageHero";
 import { buildSeoHead } from "@/lib/seo";
 import { pageSchema, breadcrumbSchema, jsonLdString } from "@/lib/structured-data";
 import heroImg from "@/assets/hero-infra.jpg";
-import catHdpe from "@/assets/cat-hdpe.jpg";
-import catElectro from "@/assets/cat-electrofusion.jpg";
-import catMdp from "@/assets/cat-mdp.jpg";
-import catBath from "@/assets/cat-bathroom.jpg";
-import catFaucet from "@/assets/cat-faucets.jpg";
-import catBore from "@/assets/cat-borewell.jpg";
+import catHdpe from "@/assets/HDPE/HDPE_Fitting.jpeg";
+import catElectro from "@/assets/HDPE/Electrofusion.jpeg";
+import catMdp from "@/assets/MDP/cat-mdp.jpg";
+import catBath from "@/assets/BathroomProduct/cat-bathroom.jpg";
+import catFaucet from "@/assets/Faucets&Fittings/Faucets.jpg";
+import catBore from "@/assets/BorewellProducts/cat-borewell.jpg";
 
 // HDPE Images
 import hdpepipes from "@/assets/HDPE/HDPE_Pipe.jpg";
@@ -391,7 +391,7 @@ function ProductsPage() {
                                     className="inline-flex items-center gap-1 font-semibold text-saffron hover:text-saffron-deep"
                                   >
                                     <Download className="h-3 w-3" />
-                                    Download {item.name} brochure
+                                    Download Brochure
                                   </a>
                                 ) : (
                                   <button
