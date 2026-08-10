@@ -16,6 +16,8 @@ export function Logo({ variant = "dark", className = "h-24" }: LogoProps) {
       <img
         src={ShreejiLogo}
         alt="Shreeji Enterprises Logo"
+        width={574}
+        height={435}
         className={`${className} w-auto object-contain transition-transform duration-300 group-hover:scale-105`}
       />
     </Link>
