@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Droplets, ShieldCheck, Award } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { buildSeoHead } from "@/lib/seo";
-import { buildPageJsonLd } from "@/lib/structured-data";
+import { pageSchema, breadcrumbSchema, jsonLdString } from "@/lib/structured-data";
 import hero from "@/assets/hero-bathroom.jpg";
 import sanitary from "@/assets/bath-sanitaryware.jpg";
 import faucets from "@/assets/bath-faucets.jpg";
@@ -102,16 +102,18 @@ const brands: Brand[] = [
 ];
 
 function BathroomSolutions() {
-  const jsonLd = buildPageJsonLd({
-    path: "/bathroom-solutions",
-    name: "Premium Bathroom Solutions in Satna",
-    description:
-      "Luxury sanitaryware, designer faucets and premium bathware in Satna, Madhya Pradesh.",
-    breadcrumbs: [
+  const jsonLd = jsonLdString([
+    pageSchema({
+      path: "/bathroom-solutions",
+      name: "Premium Bathroom Solutions in Satna",
+      description:
+        "Luxury sanitaryware, designer faucets and premium bathware in Satna, Madhya Pradesh.",
+    }),
+    breadcrumbSchema([
       { name: "Home", path: "/" },
       { name: "Exclusive Bathware", path: "/bathroom-solutions" },
-    ],
-  });
+    ]),
+  ]);
 
   return (
     <>

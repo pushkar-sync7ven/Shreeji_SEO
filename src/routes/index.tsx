@@ -17,7 +17,13 @@ import {
 } from "lucide-react";
 import { WhatsappIcon } from "@/components/site/WhatsappIcon";
 import { buildSeoHead } from "@/lib/seo";
-import { buildPageJsonLd } from "@/lib/structured-data";
+import {
+  organizationSchema,
+  localBusinessSchema,
+  websiteSchema,
+  pageSchema,
+  jsonLdString,
+} from "@/lib/structured-data";
 
 import heroInfra from "@/assets/hero-infra.jpg";
 import catHdpe from "@/assets/HDPE/HDPE_Pipe.jpg";
@@ -155,12 +161,17 @@ const brands: { name: string; domain: string }[] = [
 ];
 
 function Index() {
-  const jsonLd = buildPageJsonLd({
-    path: "/",
-    name: "ShreeJi Enterprises — Infrastructure Supply & Premium Bathroom Solutions",
-    description:
-      "Trusted supplier of HDPE, MDP, borewell and premium bathroom products in Satna, Madhya Pradesh.",
-  });
+  const jsonLd = jsonLdString([
+    organizationSchema(),
+    localBusinessSchema(),
+    websiteSchema(),
+    pageSchema({
+      path: "/",
+      name: "ShreeJi Enterprises — Infrastructure Supply & Premium Bathroom Solutions",
+      description:
+        "Trusted supplier of HDPE, MDP, borewell and premium bathroom products in Satna, Madhya Pradesh.",
+    }),
+  ]);
 
   return (
     <>

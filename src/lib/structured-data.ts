@@ -31,8 +31,9 @@ const CONTACT_POINTS = [
   },
 ];
 
-function organizationEntity() {
+export function organizationSchema() {
   return {
+    "@context": "https://schema.org",
     "@type": "Organization",
     "@id": ORG_ID,
     name: SITE_NAME,
@@ -45,8 +46,9 @@ function organizationEntity() {
   };
 }
 
-function localBusinessEntity() {
+export function localBusinessSchema() {
   return {
+    "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": LOCAL_BUSINESS_ID,
     name: SITE_NAME,
@@ -67,8 +69,9 @@ function localBusinessEntity() {
   };
 }
 
-function websiteEntity() {
+export function websiteSchema() {
   return {
+    "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": WEBSITE_ID,
     name: SITE_NAME,
@@ -77,16 +80,17 @@ function websiteEntity() {
   };
 }
 
-export type PageSchemaInput = {
+type PageSchemaInput = {
   path: string;
   name: string;
   type?: string;
   description?: string;
 };
 
-function pageEntity({ path, name, type = "WebPage", description }: PageSchemaInput) {
+export function pageSchema({ path, name, type = "WebPage", description }: PageSchemaInput) {
   const url = path === "/" ? SITE_DOMAIN : `${SITE_DOMAIN}${path}`;
   return {
+    "@context": "https://schema.org",
     "@type": type,
     "@id": `${url}#page`,
     name,
@@ -97,8 +101,9 @@ function pageEntity({ path, name, type = "WebPage", description }: PageSchemaInp
   };
 }
 
-function breadcrumbEntity(items: { name: string; path: string }[]) {
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
   return {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
@@ -109,50 +114,6 @@ function breadcrumbEntity(items: { name: string; path: string }[]) {
   };
 }
 
-export function organizationSchema() {
-  return { "@context": "https://schema.org", ...organizationEntity() };
-}
-
-export function localBusinessSchema() {
-  return { "@context": "https://schema.org", ...localBusinessEntity() };
-}
-
-export function websiteSchema() {
-  return { "@context": "https://schema.org", ...websiteEntity() };
-}
-
-export function pageSchema({ path, name, type = "WebPage", description }: PageSchemaInput) {
-  return { "@context": "https://schema.org", ...pageEntity({ path, name, type, description }) };
-}
-
-export function breadcrumbSchema(items: { name: string; path: string }[]) {
-  return { "@context": "https://schema.org", ...breadcrumbEntity(items) };
-}
-
 export function jsonLdString(data: object | object[]): string {
   return JSON.stringify(data);
-}
-
-export function buildPageJsonLd({
-  path,
-  name,
-  type = "WebPage",
-  description,
-  breadcrumbs,
-}: PageSchemaInput & { breadcrumbs?: { name: string; path: string }[] }): string {
-  const graph: object[] = [
-    organizationEntity(),
-    localBusinessEntity(),
-    websiteEntity(),
-    pageEntity({ path, name, type, description }),
-  ];
-
-  if (breadcrumbs) {
-    graph.push(breadcrumbEntity(breadcrumbs));
-  }
-
-  return jsonLdString({
-    "@context": "https://schema.org",
-    "@graph": graph,
-  });
 }

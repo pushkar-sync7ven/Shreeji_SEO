@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { buildSeoHead } from "@/lib/seo";
-import { buildPageJsonLd } from "@/lib/structured-data";
+import { pageSchema, breadcrumbSchema, jsonLdString } from "@/lib/structured-data";
 import heroImg from "@/assets/hero-infra.jpg";
 
 export const Route = createFileRoute("/terms")({
@@ -16,14 +16,16 @@ export const Route = createFileRoute("/terms")({
 });
 
 function TermsPage() {
-  const jsonLd = buildPageJsonLd({
-    path: "/terms",
-    name: "Terms & Conditions — ShreeJi Enterprises",
-    breadcrumbs: [
+  const jsonLd = jsonLdString([
+    pageSchema({
+      path: "/terms",
+      name: "Terms & Conditions — ShreeJi Enterprises",
+    }),
+    breadcrumbSchema([
       { name: "Home", path: "/" },
       { name: "Terms & Conditions", path: "/terms" },
-    ],
-  });
+    ]),
+  ]);
 
   return (
     <>
