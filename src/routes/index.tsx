@@ -221,9 +221,9 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.85 }}
           className="mt-7 max-w-xl text-base leading-relaxed text-white/75 md:text-lg"
         >
-          Complete solutions for HDPE Systems, MDP Systems, GI Products, Borewell Solutions,
-          Bathroom Products, Faucets & Fittings, and Residential Plumbing Solutions — serving
-          projects across Madhya Pradesh.
+          Based in Satna, ShreeJi Enterprises supplies HDPE Systems, MDP Systems, GI Products,
+          Borewell Solutions, Bathroom Products, Faucets & Fittings, and Residential Plumbing
+          Solutions — serving projects across Madhya Pradesh.
         </motion.p>
 
         <motion.div
