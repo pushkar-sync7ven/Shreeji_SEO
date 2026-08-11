@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { buildSeoHead } from "@/lib/seo";
-import { pageSchema, breadcrumbSchema, jsonLdString } from "@/lib/structured-data";
+import { buildRouteGraph, jsonLdString } from "@/lib/structured-data";
 import heroImg from "@/assets/hero-infra.jpg";
 
 export const Route = createFileRoute("/privacy")({
@@ -16,16 +16,18 @@ export const Route = createFileRoute("/privacy")({
 });
 
 function PrivacyPage() {
-  const jsonLd = jsonLdString([
-    pageSchema({
-      path: "/privacy",
-      name: "Privacy Policy — ShreeJi Enterprises",
+  const jsonLd = jsonLdString(
+    buildRouteGraph({
+      page: {
+        path: "/privacy",
+        name: "Privacy Policy — ShreeJi Enterprises",
+      },
+      breadcrumbs: [
+        { name: "Home", path: "/" },
+        { name: "Privacy Policy", path: "/privacy" },
+      ],
     }),
-    breadcrumbSchema([
-      { name: "Home", path: "/" },
-      { name: "Privacy Policy", path: "/privacy" },
-    ]),
-  ]);
+  );
 
   return (
     <>

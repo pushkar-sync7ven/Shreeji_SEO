@@ -14,7 +14,7 @@ import {
 
 import { PageHero } from "@/components/site/PageHero";
 import { buildSeoHead } from "@/lib/seo";
-import { pageSchema, breadcrumbSchema, jsonLdString } from "@/lib/structured-data";
+import { buildRouteGraph, jsonLdString } from "@/lib/structured-data";
 import aboutHero from "@/assets/about-hero.jpg";
 
 
@@ -51,19 +51,21 @@ const stats = [
 ];
 
 function AboutPage() {
-  const jsonLd = jsonLdString([
-    pageSchema({
-      path: "/about",
-      name: "About Us — Plumbing Supplier in Satna",
-      type: "AboutPage",
-      description:
-        "Learn about ShreeJi Enterprises, a trusted plumbing and bathware supplier in Satna serving Madhya Pradesh with quality infrastructure products.",
+  const jsonLd = jsonLdString(
+    buildRouteGraph({
+      page: {
+        path: "/about",
+        name: "About Us — Plumbing Supplier in Satna",
+        type: "AboutPage",
+        description:
+          "Learn about ShreeJi Enterprises, a trusted plumbing and bathware supplier in Satna serving Madhya Pradesh with quality infrastructure products.",
+      },
+      breadcrumbs: [
+        { name: "Home", path: "/" },
+        { name: "About Us", path: "/about" },
+      ],
     }),
-    breadcrumbSchema([
-      { name: "Home", path: "/" },
-      { name: "About Us", path: "/about" },
-    ]),
-  ]);
+  );
 
   return (
     <>

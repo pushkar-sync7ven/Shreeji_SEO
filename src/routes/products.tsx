@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Download, ArrowRight, ChevronRight, Info } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { buildSeoHead } from "@/lib/seo";
-import { pageSchema, breadcrumbSchema, jsonLdString } from "@/lib/structured-data";
+import { buildRouteGraph, jsonLdString } from "@/lib/structured-data";
 import heroImg from "@/assets/hero-infra.jpg";
 import catHdpe from "@/assets/HDPE/HDPE_Fitting.jpeg";
 import catElectro from "@/assets/HDPE/Electrofusion.jpeg";
@@ -239,19 +239,21 @@ function ProductsPage() {
   const sub = subKey && cat.subGroups ? cat.subGroups[subKey] : null;
   const displayItems = sub ? sub.items : cat.items;
 
-  const jsonLd = jsonLdString([
-    pageSchema({
-      path: "/products",
-      name: "Our Product Catalogue",
-      type: "CollectionPage",
-      description:
-        "Explore HDPE, MDP, GI, borewell, faucets and bathroom products in Satna, Madhya Pradesh.",
+  const jsonLd = jsonLdString(
+    buildRouteGraph({
+      page: {
+        path: "/products",
+        name: "Our Product Catalogue",
+        type: "CollectionPage",
+        description:
+          "Explore HDPE, MDP, GI, borewell, faucets and bathroom products in Satna, Madhya Pradesh.",
+      },
+      breadcrumbs: [
+        { name: "Home", path: "/" },
+        { name: "Products", path: "/products" },
+      ],
     }),
-    breadcrumbSchema([
-      { name: "Home", path: "/" },
-      { name: "Products", path: "/products" },
-    ]),
-  ]);
+  );
 
   return (
     <>
