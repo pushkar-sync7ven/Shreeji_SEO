@@ -57,7 +57,7 @@ const cards = [
       "Navrang Park Colony, Jeevan Jyoti Colony,",
       "Madhya Pradesh — 485005",
     ],
-    href: "https://maps.app.goo.gl/eKeMgDvY8DmRpAmh7",
+    href: "https://maps.app.goo.gl/p9ZsNkExXh2sdFnh6",
     external: true,
   },
 ];
@@ -296,7 +296,7 @@ function ContactPage() {
 
               {/* GOOGLE REVIEW CTA */}
               <a
-                href="https://share.google/DCHkWGWmmNbUPfSRs"
+                href="https://maps.app.goo.gl/p9ZsNkExXh2sdFnh6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex w-full min-w-0 items-center gap-4 rounded-2xl border border-border/60 bg-card p-5 transition hover:border-saffron/50 hover:shadow-[0_18px_40px_-24px_rgba(42,42,42,0.22)]"
