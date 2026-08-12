@@ -9,6 +9,12 @@ import sanitary from "@/assets/bath-sanitaryware.jpg";
 import faucets from "@/assets/bath-faucets.jpg";
 import bathware from "@/assets/bath-bathware.jpg";
 import shower from "@/assets/bath-shower.jpg";
+import CPVC from "@/assets/Dutron/CVPC.png";
+import DutronImg from "@/assets/Dutron/DutronImg.png";
+import UPVCP from "@/assets/Dutron/UVPC_Plumbing.png";
+import UVPC from "@/assets/Dutron/UVPC.png";
+import HDPE from "@/assets/Dutron/HDPE.png";
+
 
 export const Route = createFileRoute("/bathroom-solutions")({
   head: () =>
@@ -43,27 +49,43 @@ type Brand = {
 };
 
 const brands: Brand[] = [
-  {
+    {
     index: "01",
     name: "Jaquel",
     tagline: "The Complete Bathing Experience",
-    since: "Since 1960",
+    since: "Since 2015",
     domain: "jaquelfaucet.com",
     intro:
-      "India's most awarded bathware house — a global brand present in over 55 countries, celebrated for design, engineering and finish.",
+      "Jaquel is an Indian bathroom fittings and sanitaryware brand offering a complete range of faucets, showers, bathroom fittings, sanitaryware, cisterns, and wellness products for modern residential and commercial spaces.",
     story:
-      "From the flagship Artize couture collection to Lyric and Fonte, Jaquel brings together European design sensibility with meticulous Indian craftsmanship. Every product is engineered for silent, drip-free performance and finished to jewellery-grade standards.",
+      "Since 2015, Jaquel has developed a diverse bathroom portfolio that brings together contemporary and classic designs with practical functionality and dependable performance. From faucets and shower fittings to sanitaryware, concealed cisterns, bathtubs, and jacuzzi baths, Jaquel offers coordinated solutions for complete bathroom spaces.",
     ranges: [
-      { title: "Sanitaryware", desc: "Vitreous china basins, wall-hung WCs and bidets from the Continental and Opal series.", img: sanitary },
-      { title: "Designer Faucets", desc: "Chrome, gold, black-matt and rose-gold finishes across Artize, Fonte and Lyric collections.", img: faucets },
-      { title: "Luxury Baths", desc: "Freestanding acrylic tubs, whirlpool and air-spa baths for private sanctuaries.", img: bathware },
-      { title: "Shower Systems", desc: "Rainfall panels, thermostatic mixers and body-jet columns from the Aquamax range.", img: shower },
+      {
+        title: "Sanitaryware",
+        desc: "Wall-hung and floor-mounted toilets, one-piece closets, basins, urinals, and other sanitaryware designed for modern bathrooms.",
+        img: sanitary,
+      },
+      {
+        title: "Designer Faucets",
+        desc: "Jaquel faucets, mixers, taps, angle cocks, stop taps, and bathroom fittings combining contemporary styling with everyday functionality.",
+        img: faucets,
+      },
+      {
+        title: "Luxury Baths",
+        desc: "Bathtubs and jacuzzi baths designed to bring greater comfort and relaxation to premium residential bathroom spaces.",
+        img: bathware,
+      },
+      {
+        title: "Showers Systems",
+        desc: "A wide selection of showers, shower fittings, mixers, and bathroom accessories for coordinated bathing spaces.",
+        img: shower,
+      },
     ],
     highlights: [
-      { icon: Award, label: "55+ countries" },
-      { icon: Sparkles, label: "Jewellery-grade finish" },
-      { icon: ShieldCheck, label: "10-year warranty" },
-      { icon: Droplets, label: "Silent, drip-free" },
+      { icon: Award, label: "Since 2015" },
+      { icon: Sparkles, label: "Classic & contemporary designs" },
+      { icon: ShieldCheck, label: "Up to 9-year warranty*" },
+      { icon: Droplets, label: "Complete bathroom range" },
     ],
     accent: "from-[#c9a04a] via-[#b8863d] to-[#8a5a1a]",
     heroImg: sanitary,
@@ -82,10 +104,10 @@ const brands: Brand[] = [
     story:
       "Dutron manufactures a complete portfolio of PPR, CPVC, UPVC and HDPE systems in ISO-certified facilities. Every pipe is pressure-tested and every fitting engineered for leak-proof, corrosion-free service life exceeding fifty years.",
     ranges: [
-      { title: "PPR-C Hot & Cold", desc: "Fusion-welded polypropylene systems for potable hot and cold water lines.", img: bathware },
-      { title: "CPVC Plumbing", desc: "Chlorinated PVC systems for high-temperature residential and commercial plumbing.", img: faucets },
-      { title: "UPVC Column & Casing", desc: "Threaded column pipes for submersible pumps and borewell casings.", img: shower },
-      { title: "HDPE Networks", desc: "PE 80 / PE 100 pipes for water supply, irrigation and industrial mains.", img: sanitary },
+      { title: "UPVC Plumbing", desc: "Reliable, lightweight UPVC systems for durable and efficient water supply.", img: UPVCP },
+      { title: "CPVC Plumbing", desc: "Chlorinated PVC systems for high-temperature residential and commercial plumbing.", img: CPVC },
+      { title: "UPVC Column & Casing", desc: "Threaded column pipes for submersible pumps and borewell casings.", img: UVPC },
+      { title: "HDPE Networks", desc: "PE 80 / PE 100 pipes for water supply, irrigation and industrial mains.", img: HDPE },
     ],
     highlights: [
       { icon: Award, label: "50+ years legacy" },
@@ -94,7 +116,7 @@ const brands: Brand[] = [
       { icon: Sparkles, label: "50-year service life" },
     ],
     accent: "from-[#1e3a5f] via-[#2a4d75] to-[#0f2947]",
-    heroImg: bathware,
+    heroImg: DutronImg,
     sectionBg: "bg-[#EBE0C9]",
     blobA: "bg-[#DDC9A0]",
     blobB: "bg-[#D2B989]",
