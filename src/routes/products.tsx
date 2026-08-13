@@ -413,10 +413,9 @@ function ProductsPage() {
                   </div>
 
                   <div className="mt-12 flex justify-center">
-                    <button className="inline-flex items-center gap-2 rounded-full bg-saffron px-8 py-4 text-sm font-semibold text-white transition hover:bg-saffron-deep">
-                      <Download className="h-4 w-4" /> Download Full Catalogue
-                      (PDF)
-                    </button>
+                    <p className="text-sm text-ink-soft">
+                      Individual product brochures are available above.
+                    </p>
                   </div>
                 </motion.div>
               </AnimatePresence>
