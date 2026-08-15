@@ -11,7 +11,9 @@ import {
 
 const WHATSAPP_URL =
   "https://wa.me/918882597076?text=" +
-  encodeURIComponent("Hi! I have a query regarding your services. Looking forward to your response.");
+  encodeURIComponent(
+    "Hi! I have a query regarding your services. Looking forward to your response.",
+  );
 
 const productCats = [
   { key: "hdpe", label: "HDPE Systems" },
@@ -37,7 +39,8 @@ export function Footer() {
         <div className="space-y-5">
           <Logo variant="light" />
           <p className="max-w-xs text-sm leading-relaxed text-white/60">
-            Infrastructure Supply & Premium Bathroom Solutions for projects in Madhya Pradesh.
+            Infrastructure Supply & Premium Bathroom Solutions for projects in
+            Madhya Pradesh.
           </p>
           <div className="flex gap-3">
             {socials.map(({ Icon, label, href }) => (
@@ -68,7 +71,10 @@ export function Footer() {
               { to: "/contact", label: "Contact" },
             ].map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="text-white/60 transition hover:text-saffron">
+                <Link
+                  to={l.to}
+                  className="text-white/60 transition hover:text-saffron"
+                >
                   {l.label}
                 </Link>
               </li>
@@ -101,8 +107,12 @@ export function Footer() {
           </h4>
           <ul className="space-y-3 text-sm text-white/70">
             <li>
-              <a href="tel:+918882597076" className="flex gap-3 text-white/70 transition hover:text-saffron">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-saffron" /> +91 88825 97076
+              <a
+                href="tel:+918882597076"
+                className="flex gap-3 text-white/70 transition hover:text-saffron"
+              >
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-saffron" /> +91
+                88825 97076
               </a>
             </li>
             <li>
@@ -112,7 +122,8 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="flex gap-3 text-white/70 transition hover:text-saffron"
               >
-                <WhatsappIcon className="mt-0.5 h-4 w-4 shrink-0 text-saffron" /> +91 88825 97076 (WhatsApp)
+                <WhatsappIcon className="mt-0.5 h-4 w-4 shrink-0 text-saffron" />{" "}
+                +91 88825 97076 (WhatsApp)
               </a>
             </li>
             <li>
@@ -120,12 +131,14 @@ export function Footer() {
                 href="mailto:shreejienterprises1806@gmail.com"
                 className="flex gap-3 text-white/70 transition hover:text-saffron"
               >
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-saffron" /> shreejienterprises1806@gmail.com
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-saffron" />{" "}
+                shreejienterprises1806@gmail.com
               </a>
             </li>
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-saffron" />
-              Shreeji Enterprise, Bus Stand, Navrang Park Colony, Jeevan Jyoti Colony, Satna, Madhya Pradesh — 485005
+              Shreeji Enterprise, Bus Stand, Navrang Park Colony, Jeevan Jyoti
+              Colony, Satna, Madhya Pradesh — 485005
             </li>
           </ul>
         </div>
@@ -133,7 +146,10 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-xs text-white/50 lg:flex-row lg:px-10">
-          <p>© {new Date().getFullYear()} ShreeJi Enterprises. All Rights Reserved.</p>
+          <p>
+            © {new Date().getFullYear()} ShreeJi Enterprises. All Rights
+            Reserved.
+          </p>
           <div className="flex gap-6">
             <Link
               to="/privacy"

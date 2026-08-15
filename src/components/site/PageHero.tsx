@@ -38,9 +38,13 @@ export function PageHero({
               {eyebrow}
             </p>
           )}
-          <h1 className="font-display text-5xl leading-[1.05] md:text-6xl lg:text-7xl">{title}</h1>
+          <h1 className="font-display text-5xl leading-[1.05] md:text-6xl lg:text-7xl">
+            {title}
+          </h1>
           <p className="mt-6 flex items-center gap-2 text-sm text-white/60">
-            <Link to="/" className="hover:text-saffron">Home</Link>
+            <Link to="/" className="hover:text-saffron">
+              Home
+            </Link>
             <ChevronRight className="h-3.5 w-3.5" />
             <span className="text-white">{crumb}</span>
           </p>

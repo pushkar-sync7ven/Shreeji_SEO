@@ -221,9 +221,10 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.85 }}
           className="mt-7 max-w-xl text-base leading-relaxed text-white/75 md:text-lg"
         >
-          Based in Satna, ShreeJi Enterprises supplies HDPE Systems, MDP Systems, GI Products,
-          Borewell Solutions, Bathroom Products, Faucets & Fittings, and Residential Plumbing
-          Solutions — serving projects across Madhya Pradesh.
+          Based in Satna, ShreeJi Enterprises supplies HDPE Systems, MDP
+          Systems, GI Products, Borewell Solutions, Bathroom Products, Faucets &
+          Fittings, and Residential Plumbing Solutions — serving projects across
+          Madhya Pradesh.
         </motion.p>
 
         <motion.div
@@ -255,8 +256,16 @@ function Hero() {
         >
           {[
             { icon: MapPin, t: "Serving Projects", s: "Madhya Pradesh" },
-            { icon: ShieldCheck, t: "Quality Products", s: "From trusted brands" },
-            { icon: Wrench, t: "Technical Support", s: "& after-sales assistance" },
+            {
+              icon: ShieldCheck,
+              t: "Quality Products",
+              s: "From trusted brands",
+            },
+            {
+              icon: Wrench,
+              t: "Technical Support",
+              s: "& after-sales assistance",
+            },
           ].map(({ icon: Icon, t, s }) => (
             <div key={t} className="flex items-start gap-3">
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-saffron/40 bg-saffron/10 text-saffron">
@@ -291,9 +300,13 @@ function SectionHeader({
       viewport={{ once: true, margin: "-80px" }}
       className="mx-auto max-w-3xl text-center"
     >
-      <p className="mb-4 text-xs font-medium uppercase tracking-[0.32em] text-saffron">{eyebrow}</p>
+      <p className="mb-4 text-xs font-medium uppercase tracking-[0.32em] text-saffron">
+        {eyebrow}
+      </p>
       <h2 className="font-display text-4xl text-ink md:text-5xl">{title}</h2>
-      {lead && <p className="mx-auto mt-5 max-w-xl text-base text-ink-soft">{lead}</p>}
+      {lead && (
+        <p className="mx-auto mt-5 max-w-xl text-base text-ink-soft">{lead}</p>
+      )}
     </motion.div>
   );
 }
@@ -395,7 +408,9 @@ function WhyChoose() {
                 <Icon className="h-5 w-5" />
               </span>
               <h3 className="mt-6 font-display text-2xl">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/65">{desc}</p>
+              <p className="mt-2 text-sm leading-relaxed text-white/65">
+                {desc}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -417,19 +432,18 @@ function Brands() {
       <div className="relative mt-14 overflow-hidden">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-background to-transparent" />
-       <div className="flex w-max marquee-track items-center gap-10 px-6">
-        {loop.map((b, i) => (
-          <div
-            key={`${b.name}-${i}`}
-            className="flex h-20 w-40 shrink-0 items-center justify-center rounded-xl bg-white px-5 shadow-[0_4px_18px_-8px_rgba(42,42,42,0.15)] ring-1 ring-border/50 transition hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-10px_rgba(42,42,42,0.25)]"
-            title={b.name}
-          >
-            <span className="text-center text-base font-bold text-gray-800">
+
+        <div className="flex w-max marquee-track items-center gap-16 px-6">
+          {loop.map((b, i) => (
+            <div
+              key={`${b.name}-${i}`}
+              className="shrink-0 font-display text-3xl tracking-[0.08em] text-gray-800 transition hover:text-saffron md:text-3xl"
+              title={b.name}
+            >
               {b.name}
-            </span>
-          </div>
-        ))}
-      </div>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="mt-16 flex flex-wrap justify-center gap-3">
         {[Users, Briefcase].map((Icon, i) => (
@@ -457,8 +471,9 @@ function CtaBand() {
           Ready to start your next project?
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-white/70">
-          Whether you're sourcing for a large-scale infrastructure project or designing a premium
-          residence — talk to our team for technical consultation and pricing.
+          Whether you're sourcing for a large-scale infrastructure project or
+          designing a premium residence — talk to our team for technical
+          consultation and pricing.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <a
