@@ -1,12 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Sparkles,
-  Droplets,
-  ShieldCheck,
-  Award,
-} from "lucide-react";
+import { ArrowRight, Sparkles, Droplets, ShieldCheck, Award } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { buildSeoHead } from "@/lib/seo";
 import { buildRouteGraph, jsonLdString } from "@/lib/structured-data";
@@ -15,18 +9,12 @@ import sanitary from "@/assets/bath-sanitaryware.jpg";
 import faucets from "@/assets/bath-faucets.jpg";
 import bathware from "@/assets/bath-bathware.jpg";
 import shower from "@/assets/bath-shower.jpg";
-import CPVC from "@/assets/Dutron/CVPC.png";
-import DutronImg from "@/assets/Dutron/DutronImg.jpeg";
-import UPVCP from "@/assets/Dutron/UVPC_Plumbing.png";
-import UVPC from "@/assets/Dutron/UVPC.png";
-import HDPE from "@/assets/Dutron/HDPE.png";
 
 export const Route = createFileRoute("/bathroom-solutions")({
   head: () =>
     buildSeoHead({
       title: "Premium Bathroom Solutions in Satna | ShreeJi Enterprises",
-      description:
-        "Luxury sanitaryware, designer faucets and premium bathware in Satna, Madhya Pradesh. Curated brands for builders and homeowners.",
+      description: "Luxury sanitaryware, designer faucets and premium bathware in Satna, Madhya Pradesh. Curated brands for builders and homeowners.",
       path: "/bathroom-solutions",
       image: "/og-default.jpg",
     }),
@@ -59,39 +47,23 @@ const brands: Brand[] = [
     index: "01",
     name: "Jaquel",
     tagline: "The Complete Bathing Experience",
-    since: "Since 2015",
+    since: "Since 1960",
     domain: "jaquelfaucet.com",
     intro:
-      "Jaquel is an Indian bathroom fittings and sanitaryware brand offering a complete range of faucets, showers, bathroom fittings, sanitaryware, cisterns, and wellness products for modern residential and commercial spaces.",
+      "India's most awarded bathware house — a global brand present in over 55 countries, celebrated for design, engineering and finish.",
     story:
-      "Since 2015, Jaquel has developed a diverse bathroom portfolio that brings together contemporary and classic designs with practical functionality and dependable performance. From faucets and shower fittings to sanitaryware, concealed cisterns, bathtubs, and jacuzzi baths, Jaquel offers coordinated solutions for complete bathroom spaces.",
+      "From the flagship Artize couture collection to Lyric and Fonte, Jaquel brings together European design sensibility with meticulous Indian craftsmanship. Every product is engineered for silent, drip-free performance and finished to jewellery-grade standards.",
     ranges: [
-      {
-        title: "Sanitaryware",
-        desc: "Wall-hung and floor-mounted toilets, one-piece closets, basins, urinals, and other sanitaryware designed for modern bathrooms.",
-        img: sanitary,
-      },
-      {
-        title: "Designer Faucets",
-        desc: "Jaquel faucets, mixers, taps, angle cocks, stop taps, and bathroom fittings combining contemporary styling with everyday functionality.",
-        img: faucets,
-      },
-      {
-        title: "Luxury Baths",
-        desc: "Bathtubs and jacuzzi baths designed to bring greater comfort and relaxation to premium residential bathroom spaces.",
-        img: bathware,
-      },
-      {
-        title: "Showers Systems",
-        desc: "A wide selection of showers, shower fittings, mixers, and bathroom accessories for coordinated bathing spaces.",
-        img: shower,
-      },
+      { title: "Sanitaryware", desc: "Vitreous china basins, wall-hung WCs and bidets from the Continental and Opal series.", img: sanitary },
+      { title: "Designer Faucets", desc: "Chrome, gold, black-matt and rose-gold finishes across Artize, Fonte and Lyric collections.", img: faucets },
+      { title: "Luxury Baths", desc: "Freestanding acrylic tubs, whirlpool and air-spa baths for private sanctuaries.", img: bathware },
+      { title: "Shower Systems", desc: "Rainfall panels, thermostatic mixers and body-jet columns from the Aquamax range.", img: shower },
     ],
     highlights: [
-      { icon: Award, label: "Since 2015" },
-      { icon: Sparkles, label: "Classic & contemporary designs" },
-      { icon: ShieldCheck, label: "Up to 9-year warranty*" },
-      { icon: Droplets, label: "Complete bathroom range" },
+      { icon: Award, label: "55+ countries" },
+      { icon: Sparkles, label: "Jewellery-grade finish" },
+      { icon: ShieldCheck, label: "10-year warranty" },
+      { icon: Droplets, label: "Silent, drip-free" },
     ],
     accent: "from-[#c9a04a] via-[#b8863d] to-[#8a5a1a]",
     heroImg: sanitary,
@@ -110,26 +82,10 @@ const brands: Brand[] = [
     story:
       "Dutron manufactures a complete portfolio of PPR, CPVC, UPVC and HDPE systems in ISO-certified facilities. Every pipe is pressure-tested and every fitting engineered for leak-proof, corrosion-free service life exceeding fifty years.",
     ranges: [
-      {
-        title: "UPVC Plumbing",
-        desc: "Reliable, lightweight UPVC systems for durable and efficient water supply.",
-        img: UPVCP,
-      },
-      {
-        title: "CPVC Plumbing",
-        desc: "Chlorinated PVC systems for high-temperature residential and commercial plumbing.",
-        img: CPVC,
-      },
-      {
-        title: "UPVC Column & Casing",
-        desc: "Threaded column pipes for submersible pumps and borewell casings.",
-        img: UVPC,
-      },
-      {
-        title: "HDPE Networks",
-        desc: "PE 80 / PE 100 pipes for water supply, irrigation and industrial mains.",
-        img: HDPE,
-      },
+      { title: "PPR-C Hot & Cold", desc: "Fusion-welded polypropylene systems for potable hot and cold water lines.", img: bathware },
+      { title: "CPVC Plumbing", desc: "Chlorinated PVC systems for high-temperature residential and commercial plumbing.", img: faucets },
+      { title: "UPVC Column & Casing", desc: "Threaded column pipes for submersible pumps and borewell casings.", img: shower },
+      { title: "HDPE Networks", desc: "PE 80 / PE 100 pipes for water supply, irrigation and industrial mains.", img: sanitary },
     ],
     highlights: [
       { icon: Award, label: "50+ years legacy" },
@@ -138,7 +94,7 @@ const brands: Brand[] = [
       { icon: Sparkles, label: "50-year service life" },
     ],
     accent: "from-[#1e3a5f] via-[#2a4d75] to-[#0f2947]",
-    heroImg: DutronImg,
+    heroImg: bathware,
     sectionBg: "bg-[#EBE0C9]",
     blobA: "bg-[#DDC9A0]",
     blobB: "bg-[#D2B989]",
@@ -185,15 +141,18 @@ function BathroomSolutions() {
             One uncompromising standard.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base text-ink-soft">
-            We exclusively channel the finest of Indian bathware and piping —
-            Jaquel for the visible luxury of the bath, Dutron for the invisible
-            integrity of the plumbing behind it.
+            We exclusively channel the finest of Indian bathware and piping — Jaquel for the
+            visible luxury of the bath, Dutron for the invisible integrity of the plumbing behind it.
           </p>
         </div>
       </section>
 
       {brands.map((b, index) => (
-        <BrandSection key={b.name} brand={b} reverse={index % 2 === 1} />
+        <BrandSection
+          key={b.name}
+          brand={b}
+          reverse={index % 2 === 1}
+        />
       ))}
 
       <section className="bg-charcoal py-24 text-center text-ink">
@@ -229,19 +188,13 @@ function BrandSection({
   return (
     <section className={`relative overflow-hidden ${brand.sectionBg} text-ink`}>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#ffffff_0%,transparent_45%)]" />
-      <div
-        className={`absolute -left-40 top-20 h-96 w-96 rounded-full ${brand.blobA} opacity-70 blur-3xl`}
-      />
-      <div
-        className={`absolute -right-40 bottom-10 h-96 w-96 rounded-full ${brand.blobB} opacity-70 blur-3xl`}
-      />
+      <div className={`absolute -left-40 top-20 h-96 w-96 rounded-full ${brand.blobA} opacity-70 blur-3xl`} />
+      <div className={`absolute -right-40 bottom-10 h-96 w-96 rounded-full ${brand.blobB} opacity-70 blur-3xl`} />
 
       <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-10">
         <div
           className={`grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-20 ${
-            reverse
-              ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
-              : ""
+            reverse ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
           }`}
         >
           <motion.div
@@ -251,9 +204,7 @@ function BrandSection({
             transition={{ duration: 0.9 }}
           >
             <div className="flex items-baseline gap-4">
-              <span className="font-display text-7xl leading-none text-ink-soft">
-                {brand.index}
-              </span>
+              <span className="font-display text-7xl leading-none text-ink-soft">{brand.index}</span>
               <span className="text-[10px] font-semibold uppercase tracking-[0.35em] text-ink-soft">
                 {brand.since} · Exclusive Range
               </span>
@@ -268,19 +219,11 @@ function BrandSection({
               />
             </div> */}
 
-            <h3 className="mt-8 font-display text-5xl leading-[1.05] md:text-6xl">
-              {brand.name}
-            </h3>
-            <p className="mt-3 font-display text-xl italic text-ink/70">
-              {brand.tagline}
-            </p>
+            <h3 className="mt-8 font-display text-5xl leading-[1.05] md:text-6xl">{brand.name}</h3>
+            <p className="mt-3 font-display text-xl italic text-ink/70">{brand.tagline}</p>
 
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-ink-soft">
-              {brand.intro}
-            </p>
-            <p className="mt-5 max-w-xl text-sm leading-relaxed text-ink-soft">
-              {brand.story}
-            </p>
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-ink-soft">{brand.intro}</p>
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-ink-soft">{brand.story}</p>
 
             <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {brand.highlights.map(({ icon: Icon, label }) => (
@@ -289,9 +232,7 @@ function BrandSection({
                   className="rounded-xl border border-[#E7DDD0] bg-white p-4 shadow-sm transition hover:shadow-lg"
                 >
                   <Icon className="h-4 w-4 text-saffron" />
-                  <p className="mt-2 text-xs font-medium leading-snug text-ink">
-                    {label}
-                  </p>
+                  <p className="mt-2 text-xs font-medium leading-snug text-ink">{label}</p>
                 </div>
               ))}
             </div>
@@ -333,9 +274,7 @@ function BrandSection({
               <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-ink-soft">
                 Authorised Channel Partner
               </p>
-              <p className="mt-1 font-display text-lg text-ink">
-                ShreeJi Enterprises
-              </p>
+              <p className="mt-1 font-display text-lg text-ink">ShreeJi Enterprises</p>
             </div>
           </motion.div>
         </div>
@@ -360,9 +299,7 @@ function BrandSection({
               </div>
               <div className="p-5">
                 <h4 className="font-display text-lg text-ink">{r.title}</h4>
-                <p className="mt-1.5 text-xs leading-relaxed text-ink-soft">
-                  {r.desc}
-                </p>
+                <p className="mt-1.5 text-xs leading-relaxed text-ink-soft">{r.desc}</p>
               </div>
             </motion.div>
           ))}

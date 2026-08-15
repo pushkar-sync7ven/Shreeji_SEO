@@ -423,44 +423,6 @@ function ProductsPage() {
           </div>
         </div>
       </section>
-
-      <section className="bg-surface py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <h2 className="font-display text-3xl text-ink md:text-4xl">
-            Explore Our Product Categories
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {Object.entries(catalog).map(([key, c]) => {
-              const allItemNames = [
-                ...c.items.map((item) => item.name),
-                ...(c.subGroups
-                  ? Object.values(c.subGroups).flatMap((sg) =>
-                      sg.items.map((item) => item.name),
-                    )
-                  : []),
-              ];
-              return (
-                <div
-                  key={key}
-                  className="rounded-2xl border border-border/60 bg-card p-6"
-                >
-                  <h3 className="font-display text-xl text-ink">{c.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                    {c.desc}
-                  </p>
-                  <ul className="mt-4 space-y-1.5">
-                    {allItemNames.map((name) => (
-                      <li key={name} className="text-sm text-ink-soft">
-                        {name}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
