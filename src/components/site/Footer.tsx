@@ -26,10 +26,10 @@ const productCats = [
 ] as const;
 
 const socials = [
-  { Icon: FacebookIcon, label: "Facebook", href: "#" },
-  { Icon: InstagramIcon, label: "Instagram", href: "#" },
-  { Icon: LinkedinIcon, label: "LinkedIn", href: "#" },
-  { Icon: YoutubeIcon, label: "YouTube", href: "#" },
+  { Icon: FacebookIcon, label: "Facebook" },
+  { Icon: InstagramIcon, label: "Instagram" },
+  { Icon: LinkedinIcon, label: "LinkedIn" },
+  { Icon: YoutubeIcon, label: "YouTube" },
 ];
 
 export function Footer() {
@@ -43,17 +43,14 @@ export function Footer() {
             Madhya Pradesh.
           </p>
           <div className="flex gap-3">
-            {socials.map(({ Icon, label, href }) => (
-              <a
+            {socials.map(({ Icon, label }) => (
+              <span
                 key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label={label}
-                className="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-white/70 transition hover:border-saffron hover:text-saffron"
+                className="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-white/70"
               >
                 <Icon className="h-4 w-4" />
-              </a>
+              </span>
             ))}
           </div>
         </div>

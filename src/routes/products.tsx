@@ -351,8 +351,16 @@ function ProductsPage() {
                         onClick={() => {
                           if (item.subKey) setSubKey(item.subKey);
                         }}
+                        onKeyDown={(e) => {
+                          if (item.subKey && (e.key === "Enter" || e.key === " ")) {
+                            e.preventDefault();
+                            setSubKey(item.subKey);
+                          }
+                        }}
+                        role={item.subKey ? "button" : undefined}
+                        tabIndex={item.subKey ? 0 : undefined}
                         className={`group overflow-hidden rounded-2xl border border-border/60 bg-card transition hover:-translate-y-1 hover:shadow-[0_24px_50px_-30px_rgba(42,42,42,0.3)] ${
-                          item.subKey ? "cursor-pointer" : ""
+                          item.subKey ? "cursor-pointer focus:outline-none focus:ring-2 focus:ring-saffron focus:ring-offset-2" : ""
                         }`}
                       >
                         <div className="aspect-square overflow-hidden bg-surface">
