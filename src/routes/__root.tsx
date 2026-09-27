@@ -134,7 +134,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           ...(rootHead.meta ?? []),
         ],
         links: [
-          { rel: "icon", type: "image/png", href: "/favicon.png" },
+          { rel: "icon", type: "image/png", href: "/favicon.jpeg" },
           {
             rel: "stylesheet",
             href: appCss,
