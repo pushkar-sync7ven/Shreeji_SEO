@@ -134,8 +134,8 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-saffron" />
-              Shreeji Enterprise, Bus Stand, Navrang Park Colony, Jeevan Jyoti
-              Colony, Satna, Madhya Pradesh — 485005
+              Shreeji Enterprise, Old Bus stand, Near Sachin Palace, Satna,
+              Madhya Pradesh - 485001
             </li>
           </ul>
         </div>
