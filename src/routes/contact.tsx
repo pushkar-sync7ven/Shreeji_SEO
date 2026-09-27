@@ -53,9 +53,9 @@ const cards = [
     icon: MapPin,
     label: "Visit Us",
     lines: [
-      "Shreeji Enterprise, Bus Stand,",
-      "Navrang Park Colony, Jeevan Jyoti Colony,",
-      "Madhya Pradesh — 485005",
+      "Shreeji Enterprise, Old Bus Stand,",
+      "Near Sachin Palace,",
+      "Madhya Pradesh — 485001",
     ],
     href: "https://maps.app.goo.gl/p9ZsNkExXh2sdFnh6",
     external: true,
