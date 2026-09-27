@@ -42,17 +42,7 @@ export function Footer() {
             Infrastructure Supply & Premium Bathroom Solutions for projects in
             Madhya Pradesh.
           </p>
-          <div className="flex gap-3">
-            {socials.map(({ Icon, label }) => (
-              <span
-                key={label}
-                aria-label={label}
-                className="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-white/70"
-              >
-                <Icon className="h-4 w-4" />
-              </span>
-            ))}
-          </div>
+          
         </div>
 
         <div>
